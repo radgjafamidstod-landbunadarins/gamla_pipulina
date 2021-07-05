@@ -14,6 +14,6 @@ Name of program - input - output
 1. Preppaprod.f - pedigree and observations from huppa - **Wxx0**
 2. Codeherd.f - Wxx0 - wxx1 (used internally within function - **Wxx2**
 3. allped. f Wxx2 - **Wxx2**
-4. 4. codeid - Wxx2 - **Rmain**
-5. 5. Rmain - Ped.txt
+4. codeid - Wxx2 - **Rmain**
+5. Rmain - Ped.txt
 6. 
