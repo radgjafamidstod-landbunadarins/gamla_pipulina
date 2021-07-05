@@ -2,6 +2,8 @@
 
 The goal here is to review all the steps in the old program to locate which parts are where and be able to discern which parts can safely be discarded as DMU and DMU trace will take over certain parts of it. **See the wiki for description of each part!!**
 
+https://github.com/radgjafamidstod-landbunadarins/gamla_pipulina/wiki
+
 The files here are for the "mjolk" run. It seems to be needed to keep running parts of this in order for other traits than milk to be correct. Has something to do with data cleaning and such things - AFAIK it is fertility that is the culprit.
 
 It is needed to document these old functions in order to see which parts of them are essential to port to a new pipeline and which parts can be safely be thrown out. 
