@@ -8,6 +8,7 @@ It is needed to document these old functions in order to see which parts of them
 
 
 ## Function of this program
+These programs are called from the command line in a specific order and some of them require editing before being run.
 
 Name of program - input - output
 1. Preppaprof.f - pedigree and observations from huppa - **Wxx0**
