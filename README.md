@@ -7,3 +7,8 @@ The files here are for the "mjolk" run. It seems to be needed to keep running pa
 It is needed to document these old functions in order to see which parts of them are essential to port to a new pipeline and which parts can be safely be thrown out. 
 
 
+## Function of this program
+
+Name of program - input - output
+1. Preppaprof.f - pedigree and observations from huppa - **Wxx0**
+2. Codeherd.f - Wxx0 - wxx1 (used internally within function - **Wxx2**
