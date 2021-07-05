@@ -1,6 +1,6 @@
 # Here is the documentation for the old pipeline in the calculation of EBVs
 
-The goal here is to review all the steps in the old program to locate which parts are where and be able to discern which parts can safely be discarded as DMU and DMU trace will take over certain parts of it.
+The goal here is to review all the steps in the old program to locate which parts are where and be able to discern which parts can safely be discarded as DMU and DMU trace will take over certain parts of it. **See the wiki for description of each part!!**
 
 The files here are for the "mjolk" run. It seems to be needed to keep running parts of this in order for other traits than milk to be correct. Has something to do with data cleaning and such things - AFAIK it is fertility that is the culprit.
 
