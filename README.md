@@ -11,5 +11,5 @@ It is needed to document these old functions in order to see which parts of them
 These programs are called from the command line in a specific order and some of them require editing before being run.
 
 Name of program - input - output
-1. Preppaprof.f - pedigree and observations from huppa - **Wxx0**
+1. Preppaprod.f - pedigree and observations from huppa - **Wxx0**
 2. Codeherd.f - Wxx0 - wxx1 (used internally within function - **Wxx2**
