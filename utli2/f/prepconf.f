@@ -12,100 +12,26 @@ c...====================================================================
 C   Ymiss tekk eru gerd og golludum faerslu safnad i skra ms1.err
 c... Pick up lactation number and age at 1:st birth of cow
 c... Gagnasiur
-c     parameter(norec = 98301) ! conf.gogn.1411
-c     parameter(noani= 453604)
-c     parameter(noprod= 169902)
-!     parameter(norec = 102480) ! conf.gogn.1505
-!!    parameter(norec = 105049) ! conf.gogn.1511s
-!     parameter(norec = 107702) ! conf.gogn.1605s
-!     parameter(norec = 110827) ! conf.gogn.1611s
-!     parameter(norec = 115380) ! conf.gogn.1705s
-!     parameter(norec = 116903) ! conf.gogn.1710s
-!     parameter(norec = 121368) ! conf.gogn.1805s
-!     parameter(norec = 125428) ! conf.gogn.1901s
-!     parameter(norec = 130359) ! conf.gogn.1910s
-!     parameter(norec = 132349) ! conf.gogn.0120s
-!     parameter(norec = 135051) ! conf.gogn.0620s
       parameter(norec = 137947) ! conf.gogn.2101s
-!     parameter(noani= 466316)
-!!    parameter(noani= 478547)!Rmain undir mjolk/vinnsla
-!     parameter(noani= 491303)!Rmain undir mjolk/vinnsla
-!     parameter(noani= 500881)!Rmain undir mjolk/vinnsla
-!     parameter(noani= 515915)!Rmain undir mjolk/vinnsla
-!     parameter(noani= 526154)!Rmain undir mjolk/vinnsla
-!     parameter(noani= 542633)!Rmain undir mjolk/vinnsla
-!     parameter(noani= 560012)!Rmain undir mjolk/vinnsla
-!     parameter(noani= 576353)!Rmain undir mjolk/vinnsla
-!     parameter(noani= 586577)!Rmain undir mjolk/vinnsla
-!     parameter(noani= 596523)!Rmain undir mjolk/vinnsla
       parameter(noani= 611146)!Rmain undir mjolk/vinnsla
-!     parameter(noprod= 173342) !product.m15
-!!    parameter(noprod= 175868) !product.n15
-!     parameter(noprod= 179349) !product.m16
-!     parameter(noprod= 181292) !product.n16
-!     parameter(noprod= 184499) !product.m17
-!     parameter(noprod= 186515) !products.o17
-!     parameter(noprod= 191158) !products.m18
-!     parameter(noprod= 195658) !products.j19
-!     parameter(noprod= 199480) !products.o19
-!     parameter(noprod= 202056) !products.j20
-!     parameter(noprod= 204319) !products.jun20
       parameter(noprod= 207518) !products.jan21
 
       integer prod(40,noani),idom(38),pix(3),pl,ncp,pl2
       real*8 ap,cpix(noani),prix(noprod),ap2
-c     character*1 clas(noani),dom(36)*15,pth*29,pt2*34,pt3*37
-!     character*1 clas(noani),dom(36)*15,pth*26,pt2*31,pt3*34
       character*1 clas(noani),dom(36)*15,pth*21,pt2*26,pt3*29
       integer cbd(6,noprod),lac,age
       integer stat(2,20),stdo(34,0:20)
       logical binsok,binsok2
-c     pth='/home/agust/skuggi_kyr/utli2/'
-c     pt2='/home/agust/skuggi_kyr/mjolk/safn/'
-c     pt3='/home/agust/skuggi_kyr/mjolk/vinnsla/'
-!!    pth='/home/LBHI/elsa/Kyr/utli2/'
-!!    pt2='/home/LBHI/elsa/Kyr/mjolk/safn/'
-!!    pt3='/home/LBHI/elsa/Kyr/mjolk/vinnsla/'
       pth='/home/elsa/Kyr/utli2/'
       pt2='/home/elsa/Kyr/mjolk/safn/'
       pt3='/home/elsa/Kyr/mjolk/vinnsla/'
       icnt=0
       open(9,file=pth//'safn/confgetlact.log')
-c     open(10,file=pth//'safn/conf.gogn.1411')
-!     open(10,file=pth//'safn/conf.gogn.1505')
-!!    open(10,file=pth//'safn/conf.gogn.1511s')
-!     open(10,file=pth//'safn/conf.gogn.1605s')
-!     open(10,file=pth//'safn/conf.gogn.1611s')
-!     open(10,file=pth//'safn/conf.gogn.1705s')
-!     open(10,file=pth//'safn/conf.gogn.1710s')
-!     open(10,file=pth//'safn/conf.gogn.1805s')
-!     open(10,file=pth//'safn/conf.gogn.1901s')
-!     open(10,file=pth//'safn/conf.gogn.1910s')
-!     open(10,file=pth//'safn/conf.gogn.0120s')
-!     open(10,file=pth//'safn/conf.gogn.0620s')
       open(10,file=pth//'safn/conf.gogn.2101s')
-c     open(11,file=pt2//'product.n14',status='old')
-!     open(11,file=pt2//'product.m15',status='old')
-!!    open(11,file=pt2//'product.n15',status='old')
-!     open(11,file=pt2//'product.m16',status='old')
-!     open(11,file=pt2//'product.n16',status='old')
-!     open(11,file=pt2//'products.m17',status='old')
-!     open(11,file=pt2//'products.o17',status='old')
-!     open(11,file=pt2//'products.m18',status='old')
-!     open(11,file=pt2//'products.j19',status='old')
-!     open(11,file=pt2//'products.o19',status='old')
-!     open(11,file=pt2//'products.j20',status='old')
-!     open(11,file=pt2//'products.jun20',status='old')
       open(11,file=pt2//'products.jan21',status='old')
       open(12,file=pt3//'Rmain',status='old')
       open(21,file=pth//'g8/conf.old')
       open(22,file=pth//'n17/conf.new')
-c     call nolli(rp,39)
-c     call nollmi(oldc,44,noani)
-c     call nollmi(cbd,6,noani)
-c     call nollmi(igerfi,3,noani)
-c     call nollmi(stat,2,20)
-c     call nollr(cpix,noani)
       do k=1,20
         stat(1,k)=0
         stat(2,k)=0
@@ -118,8 +44,6 @@ c     call nollr(cpix,noani)
       enddo
       print *,'...afram....'
 
-c 210 format(i4,i6,2i2,i3,i4,i7,i3,8i2,i1,17i1,i6,i4,i4)
-c 210 format(i4,i7,i4,i4,2i2,i3,8i2,18i1,i6,i4,i1)
   210 format(i4,i7,i4,i4,2i2,i3,1x,8i2,10i1,1x,3i1,1x,3i1,1x,2i1,2x,
      +3i1,i6,i4,i1)
   339 format(i6,3(i4,i7,i4),i1,i6,i4,12i2,9i5,6i4)
@@ -129,7 +53,7 @@ c id-ar-kyn-bu-num-s-mar-d-mbu-man-3bd_?-3dm_?,3af_?,h
 c 3y,3s,3a,3c,3m,3f,3p,3f%,3p%,las
   230 format(i6,i4,i1,i6,i4,i7,i4,i4,i6,i2,3(i4,i2),3i1,3i4,3i2,i4
      + ,12i2,9i5,6i4,a1)
-c...Format for datafile: 
+c...Format for datafile:
 	dom( 1)='Faedingarar'
 	dom( 2)='Huppunumer'
 	dom( 3)='Radnumer'
@@ -174,7 +98,7 @@ c...............'Haed'
 	dom(36)='Lesid ur safnskra'
       ncp=noani
       ncp2=noprod
-c.....Read files.......................... 
+c.....Read files..........................
 c.....lesa inn nyjustu product skra til ad fa burdardaga
       print *,'Lesa inn nyjustu product skra...'
       do i=1,noprod
@@ -225,14 +149,9 @@ c...og saekja umhverfiskoda
 c... Locate cow in main file
 	ap=(idom(1))*100000000000.d0+idom(2)*10000.d0+idom(3)
 	ap2=(idom(1))*100000000000.d0+idom(2)*10000.d0+idom(3)
-c       if(idom(1).eq.1990.and.idom(2).eq.1331941)
-c    +write(*,'(2f20.0)')ap,ap2
 	if(binsok(cpix,ncp,ap,pl))then
-c       if(idom(1).eq.1990.and.idom(2).eq.1331941)
-c    +write(*,'(3f20.0)')ap,ap2,cpix(pl)
 c...Saekir aldur vid fyrsta burd ur Rmain skranni
 c...ef aldursflokkur=0 tha er hann settur a 6 eda aldur=27 manudir (medaltal)
-c         idom(38)=prod(24,pl)
           idom(38)=prod(20,pl)
           if(idom(38).eq.0)then
              idom(38)=6
@@ -244,13 +163,9 @@ c...mjaltaskeid sett a 1
            if(ap2.eq.199013319410107.)print *,ap,idom(37),idom(38)
 c...her kannad hvort um 2 mjaltaskeid er ad raeda
 	   if(binsok2(prix,ncp2,ap2,pl2))then
-c       if(idom(1).eq.1990.and.idom(2).eq.1331941)
-c    +write(*,'(f20.0,3(i4,i2))')prix(pl2),(cbd(j,pl2),j=1,6)
              if(cbd(3,pl2).gt.0)then
-c              if(cbd(3,pl2).le.idom(4).and.cbd(4,pl2).le.idom(5))
                if(cbd(3,pl2).le.idom(4))then
                  idom(37)=2
-c                idom(38)=prod(21,pl)
                endif
              endif
            endif
@@ -271,10 +186,8 @@ c...BARA DOMAR FRAMKVAEMDIR 2000 EDA SIDAR: jun 2014
      +    idom(38),idom(7),idom(8),idom(9),idom(10),idom(11)+idom(12),
      +    idom(13)+idom(14),idom(15),idom(16)
         endif
-c 221 format(i4,i6,i4,i7,i4,i6,i4,i3,i1,i2,i3,7i2)
   221 format(i4,i7,i4,i3,i1,i2,i3,7i2)
   222 format(i4,i7,i4,i3,i1,i2,17i2)
-c 222 format(i4,i6,i4,i7,i4,i6,i4,i3,i1,i2,17i2)
 c....BARA DOMAR FRAMKVAEMDIR 2000 EDA SIDAR: jun 2014
         if(idom(17).gt.0.and.idom(4).ge.2000)then
           write(22,222)idom(1),idom(2),idom(3),idom(4)-1900,
@@ -352,12 +265,6 @@ c############################################################
 
       return
       end
-c     include '/home/agust/agusts/assub/nolli.f'
-c     include '/home/agust/agusts/assub/nollmi.f'
-c     include '/home/agust/agusts/assub/nollr.f'
-!!    include '/home/LBHI/elsa/elsaagust/agusts/assub/nolli.f'
-!!    include '/home/LBHI/elsa/elsaagust/agusts/assub/nollmi.f'
-!!    include '/home/LBHI/elsa/elsaagust/agusts/assub/nollr.f'
       include '/home/elsa/elsaagust/agusts/assub/nolli.f'
       include '/home/elsa/elsaagust/agusts/assub/nollmi.f'
       include '/home/elsa/elsaagust/agusts/assub/nollr.f'
