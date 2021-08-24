@@ -1,0 +1,24 @@
+rm ff ff2
+head -40 trait1.txt>ff 
+mv trait1.txt ff2
+cat ff ff2 > trait1.txt
+rm ff ff2
+head -40 trait2.txt>ff 
+mv trait2.txt ff2
+cat ff ff2 > trait2.txt
+rm ff ff2
+head -40 trait3.txt>ff 
+mv trait3.txt ff2
+cat ff ff2 > trait3.txt
+rm ff ff2
+head -40 trait4.txt>ff 
+mv trait4.txt ff2
+cat ff ff2 > trait4.txt
+rm ff ff2
+head -40 trait5.txt>ff 
+mv trait5.txt ff2
+cat ff ff2 > trait5.txt
+rm ff ff2
+head -40 fixed.txt>ff 
+mv fixed.txt ff2
+cat ff ff2 > fixed.txt
